@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Learners</title>
+
+  <!-- CSS -->
+   <link rel="stylesheet" href="style.css">
+
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Swiper Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <section class="123"> 
+    <div class="LOGO"> 
+      <div class="heading">Little Learner 🌙</div>
+
+<!-- Simple Login Button -->
+<div class="login-container">
+  <a href="Login/login.html" class="login-btn">Login</a>
+</div>
+
+
+
+    </div>
+
+    <nav class="white-navbar">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#cards-section">Cards</a></li>
+        <li><a href="#games-section">Games</a></li>
+        <li><a href="#quiz-section">Quiz</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img class="hm" src="Images/HOMEPAGE.png" alt="Little Learners">
+  </div>
+
+<!-- Orange Curve + Cards Section -->
+<section id="curve-section" class="curve-section">
+  <div class="blue-bar">
+    <div class="curve-text">
+      <p>💡 “Learning made fun for little learners.”</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ff9137" fill-opacity="1"
+        d="M0,96L40,128C80,160,160,224,240,240C320,256,400,224,480,208C560,192,640,192,720,208C800,224,880,256,960,245.3C1040,235,1120,181,1200,170.7C1280,160,1360,192,1400,208L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+      </path>
+    </svg>
+  </div>
+
+  <!-- Cards Heading -->
+   <section id="cards-section" class="cards-section">
+  <h2>🚀 Adventure Awaits in Every Card!</h2>
+
+  <!-- Cards Container -->
+  <div class="card-container">
+    <div class="card story-card" data-aos="fade-right" id="openStories">
+      <h1>📚 Stories</h1>
+      <p>Enjoy fun and inspiring stories for kids.</p>
+    </div>
+
+    <div class="card hadith-card" data-aos="fade-right" id="openhadith">
+      <h1>📖 Hadith</h1>
+      <p>Discover and learn a new Hadith every day!</p>
+    </div>
+
+    <div class="card duas-card" data-aos="fade-left" id="openduas">
+      <h1>🤲 Duas</h1>
+      <p>Beautiful Duas to remember Allah Almighty.</p>
+    </div>
+
+    <div class="card word-card" data-aos="fade-left" id="openword">
+      <h1>🌟 Word</h1>
+      <p>Discover new words in Arabic, Urdu & English!</p>
+    </div>
+  </div>
+</section>
+</section>
+
+  <!-- Games Section -->
+  <section id="games-section" class="games-section">
+    <h2>🌟 Fun Games for Little Learners! </h2>
+    
+    <div class="swiper service-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="Images/Habit.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="Images/Habit2.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="Images/Habit3.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="Images/Habit4.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="Images/Habit5.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="Images/Habit6.jpeg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      duration: 1200,
+      once: false,
+      offset: 150,
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Swiper Slider
+    var swiper = new Swiper(".service-slider", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      }
+    });
+  </script>
+
+  <script>
+  // When Stories card is clicked
+  document.getElementById("openStories").addEventListener("click", function() {
+  window.location.href = "cards/card1.html";
+
+  });
+</script>
+
+ <script>
+  // When hadith card is clicked
+  document.getElementById("openhadith").addEventListener("click", function() {
+  window.location.href = "cards/card2.html";
+
+  });
+</script>
+ <script>
+  // When duas card is clicked
+  document.getElementById("openduas").addEventListener("click", function() {
+  window.location.href = "cards/card3.html";
+
+  });
+</script>
+ <script>
+  // When word card is clicked
+  document.getElementById("openword").addEventListener("click", function() {
+  window.location.href = "cards/card4.html";
+
+  });
+</script>
+
+<!-- ✨ Quizzes Section Start -->
+<section id="quiz-section" class="quiz-section">
+  <h2> 🏆 Can You Beat the Quiz Challenge? </h2>
+
+  <div class="quiz-container">
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>islamic quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Learn about islam.</p>
+        <a href="quizes/quiz1.html" class="btn">Start</a>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>Science quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Test your science knowledge.</p>
+        <a href="quizes/quiz2.html" class="btn">Start</a>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>GK quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Explore your knowledge.</p>
+        <a href="quizes/quiz3.html" class="btn">Start</a>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>English quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Explore your english skills.</p>
+        <a href="quizes/quiz4.html" class="btn">Start</a>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>Math quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Do maths practice.</p>
+        <a href="quizes/quiz5.html" class="btn">Start</a>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-front">
+        <h3>Pak History quiz</h3>
+      </div>
+      <div class="card-back">
+        <p>Learn about pakistan history.</p>
+        <a href="quizes/quiz6.html" class="btn">Start</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ✨ Quizzes Section End -->
+<script>
+  const quizHeading = document.querySelector("#quiz-section h2");
+
+  function triggerQuizAnimation() {
+    quizHeading.style.animation = "none"; // reset animation
+    quizHeading.offsetHeight; // force reflow
+    quizHeading.style.animation = "fadeBounce 1.2s ease"; // reapply
+  }
+
+  // Call this function whenever you scroll or navigate to quiz section
+  document.getElementById("quiz-link").addEventListener("click", () => {
+    triggerQuizAnimation();
+  });
+</script>
+
+
+
+
+<!-- Orange Wave Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 Little Learners. All Rights Reserved 🌙</p>
+    <p>Learn, Play & Explore with Little Learners!</p>
+    <div class="footer-links">
+      <a href="#">Home</a> |
+      <a href="#cards-section">Cards</a> |
+      <a href="#games-section">Games</a> |
+      <a href="#quiz-section">Quiz</a>
+    </div>
+  </div>
+
+  <!-- Wave Background -->
+  <div class="footer-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ff9137" fill-opacity="1"
+        d="M0,96L40,128C80,160,160,224,240,240C320,256,400,224,480,208C560,192,640,192,720,208C800,224,880,256,960,245.3C1040,235,1120,181,1200,170.7C1280,160,1360,192,1400,208L1440,224L1440,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+</footer>
+
+<!-- CSS -->
+<style>
+.footer {
+  position: relative;
+  background: #ff9137; /* Wave color se match */
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+.footer-content {
+  position: relative; /* Text above wave */
+  z-index: 2;
+  padding: 40px 20px 0 20px;
+}
+.footer-content p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  font-weight: bold;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+</style>
+
+
+
+
+
+<script>
+  // Select the Games link and heading
+  const gamesLink = document.querySelector('a[href="#games-section"]');
+  const gamesHeading = document.querySelector('#games-section h2');
+
+  gamesLink.addEventListener('click', function() {
+    // Smooth scroll
+    document.querySelector('#games-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Restart animation
+    gamesHeading.style.animation = 'none';       // reset
+    gamesHeading.offsetHeight;                   // trigger reflow
+    gamesHeading.style.animation = 'bounceIn 1.2s ease'; // reapply
+  });
+</script>
+
+
+</body>
+</html>
