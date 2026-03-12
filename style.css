@@ -1,0 +1,740 @@
+/* Reset */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Background image full */
+  background: url('Images/Background.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  /* Light overlay for readability */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); /* light effect */
+  z-index: -1;
+}
+
+/* title Bar* */
+.LOGO {
+  background-color: #000000; /* Black title background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+ 
+}
+.LOGO .heading{
+ font-weight: bold;
+  font-size: 50px;
+  color: rgb(255, 253, 253);
+  animation: dropDown 2s ease-out;   /* 🔑 animation added */
+
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-100px);  /* start above the screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);       /* end in normal place */
+    opacity: 1;
+  }
+}
+
+
+
+.white-navbar {
+  background-color: #b5b813;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links li a:hover {
+  color: #fdfffe;
+  transform: scale(1.1);
+  text-shadow: 0 0 5px #fdfffe;
+}
+
+/* Glowing underline animation */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fdfffe;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+
+
+/* Hero Section (sky ) */
+.hero {
+  position: relative;
+  height: 650px;
+  background-color: #f1f512; /* yellow backgroud pic */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Kids image */
+.hero img {
+  position: relative;
+  z-index: 3;
+  height: 630px;
+}
+
+.blue-bar {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Make the curve taller */
+.blue-bar svg {
+  display: block;
+  height: 300px;  /* increase this value to make it bigger */
+  width: 100%;
+}
+
+/* Position text on top of curve */
+.curve-text {
+  position: absolute;
+  top: 40px;       /* adjust vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgb(14, 13, 13);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.cards-section h2 {
+  font-size: 3rem;                  
+  color: #000000;                  
+  text-align: center;               
+  margin-bottom: 80px;              
+  font-weight: 900;                 
+  text-transform: uppercase;        
+  letter-spacing: 2px;              
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3); 
+  animation: slideIn 1.2s ease;   
+}
+.cards-section {
+  padding-top: 100px; /*  gap between card and heading */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20%) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+
+
+/* Base Card Style */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 175px;
+  width: 220px;
+  transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+  text-align: center;
+ margin-bottom: 200px; /* adds gap below the cards */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+}
+
+/* Cards Animation */
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Odd cards */
+.card:nth-child(odd) {
+  background: #ff9393;
+  border: 3px solid black;
+  color: #333;
+}
+
+/* Even cards */
+.card:nth-child(even) {
+  background: #82c3e0;
+  border: 3px solid black;
+  color: #ffffff;
+}
+
+/* Hover Effects */
+.card:nth-child(odd):hover {
+  border: 3px solid #f6f6f7;
+  background: #ff8686;
+}
+.card:nth-child(even):hover {
+  border: 3px solid #ffffff;
+  background: #039be5;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+.story-card {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* gradient */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card h1 {
+  font-family: 'Comic Sans MS', cursive;
+  color: #080808;
+  margin-bottom: 10px;
+}
+
+.story-card p {
+  font-size: 20px;
+  font-style: italic;
+  color: #333;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Hadith Card */
+.hadith-card {
+  background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+}
+.hadith-card h1 {
+  font-family: 'Comic Sans MS', cursive;
+  color: #050505;
+  font-size: 30px;
+}
+.hadith-card p {
+  font-size: 20px;
+  font-style: italic;
+  color: #04337a;
+}
+.hadith-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Duas Card */
+.duas-card {
+  background: linear-gradient(135deg, #c8e6c9, #81c784);
+}
+.duas-card h1 {
+  font-family: 'Comic Sans MS', cursive;
+  color: #000;
+  font-size: 30px;
+}
+.duas-card p {
+  font-size: 20px;
+  font-style: italic;
+  color: #000;
+}
+.duas-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Word Card */
+.word-card {
+  background: linear-gradient(135deg, #fff59d, #ffb74d);
+}
+.word-card h1 {
+  font-family: 'Comic Sans MS', cursive;
+  color: #050505;
+  font-size: 30px;
+}
+.word-card p {
+  font-size: 20px;
+  font-style: italic;
+  color:#04337a ;
+}
+.word-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+/* Slider styling */
+.service-slider {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0;
+}
+
+
+/* Service Slider */
+.service-slider .swiper-slide {
+  overflow: hidden;
+  background: #aaa;
+  border-radius: .4rem;
+  align-items: center;
+  height: 280px;
+  width: 280px;
+}
+.service-slider .swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.service-slider .swiper-slide {
+  background: var(--clr2);
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+}
+.service-slider .content h3 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #aaa;
+  padding-bottom: 2rem;
+}
+.service-slider .content p {
+  text-transform: capitalize;
+  justify-content: baseline;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 2rem;
+  color: #333;
+  padding-bottom: 2rem;
+}
+#services {
+  padding-top: 100px;
+}
+
+/* Initial hidden state */
+.card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.2 ease, transform 0.2s ease;
+}
+
+/* When visible */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left and right alternate directions */
+.card:nth-child(1),
+.card:nth-child(3) {
+  transform: translateX(-100px);
+}
+
+.card:nth-child(2),
+.card:nth-child(4) {
+  transform: translateX(100px);
+}
+
+.card.show:nth-child(1),
+.card.show:nth-child(3),
+.card.show:nth-child(2),
+.card.show:nth-child(4) {
+  transform: translateX(0);
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Login Button Style */
+.login-btn {
+  background-color: #f1f512;
+  color: rgb(19, 17, 17);
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #cecf77;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: rgb(214, 223, 89);
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Links inside Dropdown */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffecd6;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Align caret icon properly */
+.login-btn i {
+  margin-left: 5px;
+}
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+.games-section h2 {
+  margin-bottom: 100px; 
+ 
+}
+
+.games-section {
+  padding-top: 80px; 
+}
+
+
+/* ✨ Quiz Section Styling */
+.quiz-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #fff8e1, #ffe0b2);
+}
+
+.quiz-section h2 {
+  font-size: 2.5rem;
+  color: #063f3f;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.quiz-section p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+.card-front h3 {
+   font-family: "Times New Roman", Times, serif;
+  font-size: 1.1rem;                    /* size */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;            /* optional */
+}
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* ✨ Quiz Cards */
+.quiz-card {
+  width: 150px;
+  height: 120px;
+  perspective: 1000px;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.quiz-card:hover {
+  transform: scale(1.08);
+}
+
+/* Front & Back faces */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.8s;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Front Side Gradient Colors */
+.card-front {
+  background: linear-gradient(135deg, #09425c, #496270);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #8c99df, #83aeb9);
+  transform: rotateY(180deg);
+}
+
+/* Flip Animation */
+.quiz-card:hover .card-front {
+  transform: rotateY(180deg);
+}
+.quiz-card:hover .card-back {
+  transform: rotateY(360deg);
+}
+
+/* Button Style */
+.btn {
+  margin-top: -20px;
+  background: #64b0d3;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #95b3bb;
+  transform: scale(1.05);
+}
+
+.quiz-section {
+  background: url('Images/quiz.jpg') no-repeat center top; /* top me focus */
+  background-size: cover;   /* section poora cover ho jaye */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional, scroll ke sath fix rahe */
+  color: #fff; /* text visible rahe */
+  position: relative;
+  padding: 80px 20px;
+}
+
+#games-section h2 {
+  font-size: 3rem;                     /* big and eye-catching */
+  color: #080808;                      /* bright fun color */
+  text-align: center;                  /* center the heading */
+  margin-bottom: 100px; /* increased from 40px to 60px for more gap */                /* space between heading and slider */
+  font-weight: 800;                    /* extra bold */
+  text-transform: uppercase;           /* makes it pop */
+  letter-spacing: 2px;                 /* adds spacing between letters */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* subtle 3D shadow */
+  animation: bounceIn 1.2s ease;       /* fun entrance animation */
+}
+
+/* Bounce-in animation for playful effect */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-50px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) translateY(10px);
+  }
+  80% {
+    transform: scale(0.95) translateY(-5px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+/* Add this in your style section or CSS file */
+#games-section {
+  margin-bottom: 150px; /* increases space below the slider */
+}
+
+#quiz-section h2 {
+  margin-top: 80px; /* increases space above the quiz heading */
+}
+
+/* Cards Section Heading */
+.cards h2 {
+  font-size: 3rem;
+  color: #000000; /* slightly different color to stand out */
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  animation: slideIn 1.2s ease;
+}
+
+/* Slide-in animation for Cards heading */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20%) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+  /* Quiz Heading Style */
+  #quiz-section h2 {
+    font-size: 3rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    animation: fadeBounce 1.2s ease;
+  }
+
+  /* Animation for Quiz Heading */
+  @keyframes fadeBounce {
+    0% { opacity: 0; transform: translateY(-50px) scale(0.5); }
+    50% { opacity: 1; transform: translateY(10px) scale(1.1); }
+    70% { transform: translateY(-5px) scale(0.95); }
+    100% { transform: translateY(0) scale(1); }
+  }
+
+  .login-btn {
+    background-color: #f5e504;
+    color: #131111;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: pulse 2s infinite; /* Infinite pulse animation */
+  }
+
+  .login-btn:hover {
+    background-color: #bdc01e;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 5px #ddd8d8; }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px #edeef0; }
+    100% { transform: scale(1); box-shadow: 0 0 5px #f0efed; }
+  }
+
+
+.quiz-card h3 {
+  font-family: 'Comic Sans MS', cursive; /* playful font for kids */
+  font-size: 1.8rem;
+  color: #f6f7f0; /* warm, bright color */
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* subtle shadow for depth */
+  animation: popIn 1s ease; /* animation when heading appears */
+}
+
+/* Animation for headings */
+@keyframes popIn {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* Add gap below the quiz heading */
+#quiz-card h2 {
+  margin-bottom: 50px; /* increase or decrease for more or less gap */
+}
+
+/* Or you can add margin-top to quiz container */
+.quiz-container {
+  margin-top: 100px; /* gap from heading */
+}
+
